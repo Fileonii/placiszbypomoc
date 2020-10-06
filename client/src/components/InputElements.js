@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 
-const InputTodo = () => {
+const InputElements = () => {
   const [kolega_imie, setImie] = useState();
   const [kolega_zadluzenie, setZadluzenie] = useState();
 
@@ -24,7 +24,7 @@ const InputTodo = () => {
     <Fragment>
       <h1 className="text-center mt-4">Kalkulator Zadłużenia</h1>
       <h3 className="text-center text-secondary">placiszbypomoc</h3>
-      <form>
+      <form onSubmit={onSubmitForm}>
         <div className="d-flex justify-content-center mt-5">
           <div class="form-group px-5">
             <label for="name">Imie Kolegi</label>
@@ -33,6 +33,8 @@ const InputTodo = () => {
               class="form-control"
               id="name"
               placeholder="Imie"
+              value={kolega_imie}
+              onChange={(e) => setImie(e.target.value)}
             />
           </div>
           <div class="form-group px-5">
@@ -42,6 +44,8 @@ const InputTodo = () => {
               class="form-control"
               id="zadluzenie"
               placeholder="Kwota"
+              value={kolega_zadluzenie}
+              onChange={(e) => setZadluzenie(e.target.value)}
             />
           </div>
         </div>
@@ -55,4 +59,4 @@ const InputTodo = () => {
   );
 };
 
-export default InputTodo;
+export default InputElements;

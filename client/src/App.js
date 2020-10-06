@@ -1,12 +1,14 @@
 import React, { Fragment } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import InputTodo from "./components/InputTodo";
 
+import InputElements from "./components/InputElements";
+import ListElements from "./components/ListElements";
 function App() {
   return (
     <Fragment>
-      <InputTodo />
+      <InputElements />
+      <ListElements />
     </Fragment>
   );
 }
