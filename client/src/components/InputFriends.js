@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 
-const InputElements = () => {
+const InputFriends = () => {
   const [kolega_imie, setImie] = useState();
   const [kolega_zadluzenie, setZadluzenie] = useState();
 
@@ -59,4 +59,4 @@ const InputElements = () => {
   );
 };
 
-export default InputElements;
+export default InputFriends;
