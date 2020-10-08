@@ -2,6 +2,22 @@ import React, { Fragment, useEffect, useState } from "react";
 
 const ListFriends = () => {
   const [friends, setFriends] = useState([]);
+  //const [kolega_id, setFriendId] = useState();
+
+  const deleteFriends = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:5000/friends/${id}`, {
+        method: "DELETE"
+      });
+
+      window.location = "/";
+      //setFriends(friends.filter((friend)=>friends.kolega_id !== id))
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
+
 
   const getFriends = async () => {
     try {
@@ -11,9 +27,11 @@ const ListFriends = () => {
       setFriends(jsonData);
     } catch (error) {}
   };
+
   useEffect(() => {
     getFriends();
   }, []);
+
   return (
     <Fragment>
       <table class="table mt-4">
@@ -36,8 +54,8 @@ const ListFriends = () => {
                 </button>
               </td>
               <td>
-                <button type="button" className="btn btn-secondary " disabled>
-                  Coming Soon
+                <button type="button" className="btn btn-outline-danger " onClick={() => deleteFriends(friend.kolega_id)}>
+                  Delete
                 </button>
               </td>
             </tr>
