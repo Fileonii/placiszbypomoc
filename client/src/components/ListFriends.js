@@ -1,7 +1,29 @@
 import React, { Fragment, useEffect, useState } from "react";
+import  EditFriends  from "../components/EditFriends"
+import {Button, Modal} from 'react-bootstrap'
 
 const ListFriends = () => {
   const [friends, setFriends] = useState([]);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  //const [kolega_id, setFriendId] = useState();
+
+  const deleteFriends = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:5000/friends/${id}`, {
+        method: "DELETE"
+      });
+
+      window.location = "/";
+      //setFriends(friends.filter((friend)=>friends.kolega_id !== id))
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
+
 
   const getFriends = async () => {
     try {
@@ -11,9 +33,11 @@ const ListFriends = () => {
       setFriends(jsonData);
     } catch (error) {}
   };
+
   useEffect(() => {
     getFriends();
   }, []);
+
   return (
     <Fragment>
       <table class="table mt-4">
@@ -31,13 +55,11 @@ const ListFriends = () => {
               <td>{friend.kolega_imie}</td>
               <td>{friend.kolega_zadluzenie}</td>
               <td>
-                <button type="button" className="btn btn-warning " disabled>
-                  Coming Soon
-                </button>
+              <EditFriends id={friend.kolega_id}></EditFriends>
               </td>
               <td>
-                <button type="button" className="btn btn-secondary " disabled>
-                  Coming Soon
+                <button type="button" className="btn btn-outline-danger " onClick={() => deleteFriends(friend.kolega_id)}>
+                  Delete
                 </button>
               </td>
             </tr>
