@@ -21,6 +21,7 @@ const EditFriends = (props) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
+      console.log(`${response} - DODANO!`);
 
       window.location = "/";
     } catch (error) {
@@ -29,7 +30,7 @@ const EditFriends = (props) => {
   };
 
   return (
-    <>
+    <Fragment>
       <Button variant="primary" onClick={handleShow}>
         Edytuj
       </Button>
@@ -74,7 +75,7 @@ const EditFriends = (props) => {
           </Fragment>
         </Modal.Body>
       </Modal>
-    </>
+    </Fragment>
   );
 };
 

@@ -22,8 +22,7 @@ const InputFriends = () => {
 
   return (
     <Fragment>
-      <h1 className="text-center mt-4">Kalkulator Zadłużenia</h1>
-      <h3 className="text-center text-secondary">placiszbypomoc</h3>
+
       <form onSubmit={onSubmitForm}>
         <div className="d-flex justify-content-center mt-5">
           <div class="form-group px-5">
