@@ -1,5 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import {Button, Modal} from 'react-bootstrap'
+import DatePicker from "react-datepicker";
+import 'react-datepicker/dist/react-datepicker.css';
 
 const EditFriends = (props) => {
 
@@ -12,6 +14,7 @@ const EditFriends = (props) => {
 
   const [kolega_imie, setImie] = useState();
   const [kolega_zadluzenie, setZadluzenie] = useState();
+  const [startDate, setStartDate] = useState(new Date());
 
   const updateFriends = async () => {
     try {
@@ -29,6 +32,17 @@ const EditFriends = (props) => {
     }
   };
 
+  const CustomDateImput = ({ value, onClick }) => (
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      placeholder="Imie"
+      value={value}
+      onClick={onClick}
+    />
+  );
+
   return (
     <Fragment>
       <Button variant="primary" onClick={handleShow}>
@@ -42,7 +56,7 @@ const EditFriends = (props) => {
         <Modal.Body>
           <Fragment>
             <form onSubmit={updateFriends}>
-              <div className="d-flex justify-content-center mt-5">
+              <div className="">
                 <div class="form-group px-5">
                   <label for="name">Imie Kolegi</label>
                   <input
@@ -64,6 +78,14 @@ const EditFriends = (props) => {
                     value={kolega_zadluzenie}
                     onChange={(e) => setZadluzenie(e.target.value)}
                   />
+                </div>
+                <div class="form-group px-5">
+                <label for="data">Do kiedy ma byc oddane</label><br></br>
+                <DatePicker
+                  selected={startDate}
+                  onChange={date => setStartDate(date)}
+                  customInput={<CustomDateImput/>}
+                ></DatePicker>
                 </div>
               </div>
               <div className="form-button mt-3 text-center">

@@ -1,8 +1,11 @@
 import React, { Fragment, useState } from "react";
+import DatePicker from "react-datepicker";
+import 'react-datepicker/dist/react-datepicker.css';
 
 const InputFriends = () => {
   const [kolega_imie, setImie] = useState();
   const [kolega_zadluzenie, setZadluzenie] = useState();
+  const [startDate, setStartDate] = useState(new Date());
 
   const onSubmitForm = async (e) => {
     e.preventDefault();
@@ -19,6 +22,17 @@ const InputFriends = () => {
       console.error(error.message);
     }
   };
+
+  const CustomDateImput = ({ value, onClick }) => (
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      placeholder="Imie"
+      value={value}
+      onClick={onClick}
+    />
+  );
 
   return (
     <Fragment>
@@ -47,6 +61,14 @@ const InputFriends = () => {
               onChange={(e) => setZadluzenie(e.target.value)}
             />
           </div>
+          <div class="form-group px-5">
+            <label for="data">Do kiedy ma byc oddane</label><br></br>
+            <DatePicker
+              selected={startDate}
+              onChange={date => setStartDate(date)}
+              customInput={<CustomDateImput/>}
+            ></DatePicker>
+          </div>
         </div>
         <div className="form-button mt-3 text-center">
           <button type="submit" class="btn-lg btn-primary center-block">
@@ -54,7 +76,10 @@ const InputFriends = () => {
           </button>
         </div>
       </form>
+
+
     </Fragment>
+    
   );
 };
 
