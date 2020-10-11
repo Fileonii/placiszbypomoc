@@ -8,9 +8,11 @@ import {useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData} from 'react-firebase-hooks/firestore';
 
 
-
+import {fbAuth} from '../../firebase/firebase';
 
 const LoginPage = () => {
+
+
     return( 
     <Fragment>
         <div class="container mt-5">
@@ -27,8 +29,7 @@ const LoginPage = () => {
                             <div class="form-label-group m-3">
                                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" required/>
                             </div>
-
-                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onClick={fbAuth}>LOGIN</button>
                             </form>
                         </div>
                     </div>

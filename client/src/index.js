@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import LoginPage from "./login";
+
 import Title from "./components/title";
 
 import { Route, Router } from "react-router";

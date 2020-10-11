@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import  EditFriends  from "../components/EditFriends"
+import  EditFriends  from "./EditFriends"
 import {Button, Modal} from 'react-bootstrap'
 
 const ListFriends = () => {
