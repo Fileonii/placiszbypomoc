@@ -26,7 +26,7 @@ const InputFriends = () => {
   const CustomDateImput = ({ value, onClick }) => (
     <input
       type="text"
-      class="form-control"
+      className="form-control"
       id="name"
       placeholder="Imie"
       value={value}
@@ -39,29 +39,29 @@ const InputFriends = () => {
 
       <form onSubmit={onSubmitForm}>
         <div className="d-flex justify-content-center mt-5">
-          <div class="form-group px-5">
+          <div className="form-group px-5">
             <label for="name">Imie Kolegi</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="name"
               placeholder="Imie"
               value={kolega_imie}
               onChange={(e) => setImie(e.target.value)}
             />
           </div>
-          <div class="form-group px-5">
+          <div className="form-group px-5">
             <label for="zadluzenie">Zadłużenie</label>
             <input
               type="number"
-              class="form-control"
+              className="form-control"
               id="zadluzenie"
               placeholder="Kwota"
               value={kolega_zadluzenie}
               onChange={(e) => setZadluzenie(e.target.value)}
             />
           </div>
-          <div class="form-group px-5">
+          <div className="form-group px-5">
             <label for="data">Do kiedy ma byc oddane</label><br></br>
             <DatePicker
               selected={startDate}

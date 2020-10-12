@@ -1,9 +1,8 @@
 import React, { Fragment } from "react";
-import logo from "./logo.svg";
-import "./App.css";
 
-import InputFriends from "./components/FriendsMech/InputFriends";
-import ListFriends from "./components/FriendsMech/ListFriends";
+import "./styles/App.css";
+
+
 
 import Navigation from './components/Navigation';
 import LoginPage from "./components/pages/login";
@@ -16,7 +15,19 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
+
+import { auth } from './firebase/firebase'
+
 function App() {
+
+  React.useEffect( () => {
+    const unsubscribe = auth.onAuthStateChanged(data => console.log(data))
+  
+    return () => unsubscribe()
+  },[]);
+  //use effect wykonuje sie raz, bo sa puste nawiasy kwadratowe
+  //jak chcemy zeby się pokazywal przy zmianie danej zmiennej trzeba ja 
+  //umiescic w kwadratowe
   return (
 <Router>
 <Navigation />

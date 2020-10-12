@@ -15,22 +15,15 @@ const LoginPage = () => {
 
     return( 
     <Fragment>
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                    <div class="card card-signin my-5">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Sign In</h5>
-                            <form class="form-signin">
-                            <div class="form-label-group m-3">
-                                <input type="login" id="inputLogin" class="form-control" placeholder="Login" required autofocus/>
-                            </div>
-
-                            <div class="form-label-group m-3">
-                                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required/>
-                            </div>
-                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onClick={fbAuth}>LOGIN</button>
-                            </form>
+        <div className="container mt-5">
+            <div className="row">
+                <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div className="card card-signin my-5">
+                        <div className="card-body">
+                            <h5 className="card-title text-center">Sign In</h5>
+                           
+                            <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onClick={fbAuth}>LOGIN</button>
+                            
                         </div>
                     </div>
                 </div>

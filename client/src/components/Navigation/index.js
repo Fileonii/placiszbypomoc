@@ -3,15 +3,18 @@ import {Link} from 'react-router-dom';
 
 
 const Navigation = () => (
-    <div>
-    <ul>
-      <li>
-        <Link to="/login">Sign In</Link>
-      </li>
 
-    </ul>
-  </div>
-   
+<ul className="nav justify-content-center mt-5">
+
+<li className="nav-item">
+  <a className="nav-link"><Link to="/">Strona Główna</Link></a>
+</li>
+<li className="nav-item">
+  <a className="nav-link" ><Link to="/login">Sign In</Link></a>
+</li>
+
+</ul>
+
 );
 
 export default Navigation;

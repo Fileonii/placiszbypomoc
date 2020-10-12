@@ -40,8 +40,8 @@ const ListFriends = () => {
 
   return (
     <Fragment>
-      <table class="table mt-4">
-        <thead class="thead-dark">
+      <table className="table mt-4">
+        <thead className="thead-dark">
           <tr>
             <th scope="col">Imie</th>
             <th scope="col">Zadluzenie</th>
