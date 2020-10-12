@@ -1,8 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+import {fbAuth} from '../../firebase/firebase';
+
+
+
 
 const Navigation = () => (
+
 
 <ul className="nav justify-content-center mt-5">
 

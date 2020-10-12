@@ -17,7 +17,28 @@ firebase.initializeApp(firebaseConfig);
 
 var provider = new firebase.auth.GoogleAuthProvider();
 
+
 export const fbAuth = () => {
-    return firebase.auth().signInWithPopup(provider);
+    return firebase.auth().signInWithPopup(provider).then(function(result) {
+        var token = result.credential.accessToken;
+        var user = result.user;
+        console.log(user.displayName);
+      });
+      
 }
+
 export const auth = firebase.auth();
+
+export const user = firebase.auth().currentUser;
+
+export const userInfo = () => {
+    console.log(user);
+}
+
+export const logout = () => {
+    auth.signOut();
+  
+}
+
+
+
