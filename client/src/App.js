@@ -7,6 +7,8 @@ import "./styles/App.css";
 import Navigation from './components/Navigation';
 import LoginPage from "./components/pages/login";
 import MainView from"./components/pages/mainView";
+import Ekg from"./components/pages/Ekg";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -39,6 +41,10 @@ function App() {
 
     <Route exact path="/login">
     <LoginPage></LoginPage>
+    </Route>
+
+    <Route exact path="/ekg">
+    <Ekg></Ekg>
     </Route>
 
   </Switch>
