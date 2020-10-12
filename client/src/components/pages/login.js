@@ -8,7 +8,8 @@ import {useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData} from 'react-firebase-hooks/firestore';
 
 
-import {fbAuth} from '../../firebase/firebase';
+import {fbAuth, logout, userInfo} from '../../firebase/firebase';
+
 
 const LoginPage = () => {
 
@@ -23,13 +24,15 @@ const LoginPage = () => {
                             <h5 className="card-title text-center">Sign In</h5>
                            
                             <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onClick={fbAuth}>LOGIN</button>
-                            
+                            <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onClick={logout}>Logout</button>
+                            <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onClick={userInfo}>UserInfo</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         </Fragment>
+        
     );
 };
 

@@ -18,7 +18,7 @@ import {
   useParams
 } from "react-router-dom";
 
-import { auth } from './firebase/firebase'
+import { auth, user } from './firebase/firebase'
 
 function App() {
 
@@ -30,7 +30,10 @@ function App() {
   //use effect wykonuje sie raz, bo sa puste nawiasy kwadratowe
   //jak chcemy zeby się pokazywal przy zmianie danej zmiennej trzeba ja 
   //umiescic w kwadratowe
+ 
   return (
+  
+
 <Router>
 <Navigation />
   <Switch>
